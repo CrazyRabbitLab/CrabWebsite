@@ -1,0 +1,40 @@
+@page
+
+
+
+<h1>Clang 编译器</h1>
+
+
+<h2>软件安装</h2>
+
+<p>基础环境: Docker-Debian</p>
+
+<pre><code>docker run --name clang -itd debian /bin/bash</code></pre>
+<pre><code>docker exec -it clang /bin/bash</code></pre>
+
+
+<p>命令列表:</p>
+
+<pre><code>apt update</code></pre>
+<pre><code>apt upgrade</code></pre>
+<pre><code>apt install clang -y</code></pre>
+<pre><code>apt install nano -y</code></pre>
+<pre><code>cd home</code></pre>
+<pre><code>mkdir clang</code></pre>
+<pre><code>cd clang</code></pre>
+<pre><code>nano HelloWorld.c</code></pre>
+<p>将下述内容粘贴:</p>
+<pre><code>
+#include <stdio.h>
+ 
+int main()
+{
+    printf("Hello, World!");
+    return 0;
+}
+</code></pre>
+<p>按下<b>Ctrl+X</b>键退出编辑模式, 按下<b>Y</b>键确认保存, 按下<b>Enter</b>键确认文件名称.</p>
+<pre><code>clang HelloWorld.c -o HelloWorld</code></pre>
+<pre><code>./HelloWorld</code></pre>
+
+

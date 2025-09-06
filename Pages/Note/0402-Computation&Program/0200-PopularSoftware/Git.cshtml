@@ -1,0 +1,41 @@
+@page
+
+<h1>Git</h1>
+
+<ul>
+    <li><a href="#Git是什么?">Git是什么?</a></li>
+    <li><a href="#Git如何安装?">Git如何安装?</a></li>
+    <li><a href="#Git的基本使用">Git的基本使用</a></li>
+</ul>
+
+<h2 id="Git是什么?">Git是什么?</h2>
+<p>Git是分布式的代码版本管理软件.</p>
+<p>注意, Git的最佳用途是管理纯文本的代码文件.</p>
+
+<h2 id="Git如何安装?">Git如何安装?</h2>
+
+<p>在debian上: </p>
+<pre><code>apt update&&apt upgrade&&apt install git</code></pre>
+<p>注意: 需要管理员权限与网络连接</p>
+
+<p>在Windows上: </p>
+<p>在<a href="https://git-scm.com/downloads">Git官方下载网址</a>中下载对应的安装包, 双击安装一路默认即可.</p>
+<p>注意: 需要管理员权限与网络连接</p>
+
+<p>在Termux上: </p>
+<pre><code>pkg update&&pkg upgrade&&pkg install git</code></pre>
+<p>注意: 需要管理员权限与网络连接</p>
+
+<h2 id="Git的基本使用">Git的基本使用</h2>
+
+<h3>创建代码仓库</h3>
+<pre><code>git init</code></pre>
+
+<h3>查看代码仓库状态</h3>
+<pre><code>git status</code></pre>
+
+<h3>添加文件到本地临时仓库</h3>
+<pre><code>git add</code></pre>
+
+<h3>推送文件修改到代码仓库</h3>
+<pre><code>git commit -m "修改说明"</code></pre>

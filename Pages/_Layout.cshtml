@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+</head>
+
+<body>
+    <a href="/Index">疯兔实验室 CrazyRabbitLab</a>
+    
+    @RenderBody()
+
+    <footer>
+        @* Using mathjax *@
+        <script src="~/lib/mathjax/tex-svg-full.js" id="MathJax-script" async></script>
+        <script>MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};</script>
+
+        @* Using highlight *@
+        <link rel="stylesheet" type="text/css" href="~/lib/highlight/styles/tokyo-night-dark.min.css" />
+        <script src="~/lib/highlight/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        @* Using mermaid *@
+        <script src="~/lib/mermaid/mermaid.min.js"></script>
+        <script>mermaid.initialize({ startOnLoad: true });</script>
+    </footer>
+</body>
+</html>

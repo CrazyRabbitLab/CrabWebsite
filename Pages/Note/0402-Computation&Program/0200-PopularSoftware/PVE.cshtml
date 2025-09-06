@@ -1,0 +1,68 @@
+@page
+
+<h1>PVE 虚拟机</h1>
+
+
+<ul>
+    <li>关于PVE</li>
+    <li>硬件环境准备</li>
+    <ul>
+        <li>主机各种配件安装完成</li>
+        <li>风扇清理并使用胶棉固定</li>
+        <li>系统镜像U盘</li>
+    </ul>
+    <li>bios优化</li>
+    <ul>
+        <li>进行bios升级</li>
+        <li>将所有bios设置恢复为初始化状态</li>
+    </ul>
+    <li>网络环境准备</li>
+    <ul>
+        <li>确认路由器已经连接到互联网</li>
+        <li>将iDrac管理端口 网卡-PVE管理端口与路由器连接</li>
+        <li>在路由器中将iDrac与PVE管理接口进行IP与MAC绑定</li>
+    </ul>
+    <li>PVE系统安装</li>
+    <ul>
+        <li>安装前确定把数据硬盘全部拔出</li>
+        <li>将系统安装在两个互为镜像的硬盘上.</li>
+    </ul>
+    <li>PVE系统优化与更新</li>
+    <ul>
+        <li>使用SSH以及网页登录</li>
+        <li>关闭订阅提示</li>
+        <li>更换软件库源</li>
+        <li>更新软件</li>
+        <li>安装DotnetSdk并启用dotnet-script</li>
+        <li>安装CloudFlareTunnel并测试</li>
+    </ul>
+    <li>创建虚拟机专用的虚拟网卡</li>
+    <li>创建软路由系统-OpenWRT</li>
+    <ul>
+        <li>创建DHCP服务: 10.233.233.1</li>
+        <li>安装CloudFlareTunnel并测试</li>
+        <li>将互联网网桥以及虚拟机专用网桥都要添加到OpenWRT系统中.</li>
+        <li>注意当在路由器中, 将OpenWrt的Mac地址与IP进行绑定.</li>
+    </ul>
+    <li>创建基础虚拟机-Windows11 LTSC Lan</li>
+    <ul>
+        <li>系统激活</li>
+        <li>个性化设置</li>
+        <li>关闭bitlocker</li>
+        <li>注意一定不要开启内核隔离</li>
+        <li>安装完成后创建备份与快照</li>
+    </ul>
+    <li>创建基础虚拟机-Debian12 xfce4 Lan</li>
+    <li>创建基础虚拟机-Windows11 LTSC Lan Wan</li>
+    <ul>
+        <li>在Windows11 LTSC Lan的基础上添加Wan.</li>
+        <li>更新系统到最新.</li>
+        <li>完成后创建备份与快照.</li>
+    </ul>
+    <li>创建基础虚拟机-Debian12 xfce4 Lan Wan</li>
+    <li>创建SMB存储服务器并配置H330阵列卡直通</li>
+    <ul>
+        <li>基于Windows11 LTSC Lan</li>
+    </ul>
+    <li>创建显卡服务器并配置RTX2080ti 22GB显卡直通</li>
+</ul>

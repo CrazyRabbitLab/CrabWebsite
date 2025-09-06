@@ -1,0 +1,824 @@
+@page
+
+<h1>CSharp概览 CSharpOverlook</h1>
+
+
+<ul>
+  <li><a href="#CSharp介绍与编程环境设置">CSharp介绍与编程环境设置</a></li>
+  <ul>
+    <li>CSharp是什么</li>
+    <li>编程环境是什么</li>
+    <li>设置CSharp的编程环境的方法</li>
+  </ul>
+  <li><a href="#HelloWorld与注释">HelloWorld与注释</a></li>
+  <ul>
+    <li>HelloWorld与注释</li>
+    <li>C#代码的常见结构</li>
+  </ul>
+  <li><a href="#标识符 关键字 变量 常量">标识符 关键字 变量 常量</a></li>
+  <ul>
+    <li>标识符</li>
+    <li>关键字</li>
+    <li>变量 常量的声明与初始化</li>
+    <li>变量 常量的作用范围</li>
+  </ul>
+  <li><a href="#基本数据类型">基本数据类型</a></li>
+  <ul>
+    <li>布尔类型</li>
+    <ul>
+      <li>布尔类型介绍</li>
+      <li>布尔类型的字面常量</li>
+      <li>布尔类型的声明与初始化</li>
+      <li>布尔类型的常见使用方法</li>
+    </ul>
+    <li>整数类型</li>
+    <ul>
+      <li>整数类型介绍</li>
+      <li>整数类型的字面常量</li>
+      <li>整数类型的声明与初始化</li>
+      <li>整数类型的常见使用方法</li>
+    </ul>
+    <li>浮点类型</li>
+    <ul>
+      <li>二进制浮点类型</li>
+      <ul>
+        <li>二进制浮点类型介绍</li>
+        <li>二进制浮点类型的字面常量</li>
+        <li>二进制浮点类型的声明与初始化</li>
+        <li>二进制浮点类型的常见使用方法</li>
+      </ul>
+      <li>十进制浮点类型</li>
+      <ul>
+        <li>十进制浮点类型介绍</li>
+        <li>十进制浮点类型的字面常量</li>
+        <li>十进制浮点类型的声明与初始化</li>
+        <li>十进制浮点类型的常见使用方法</li>
+      </ul>
+    </ul>
+    <li>字符类型</li>
+    <ul>
+      <li>字符类型介绍</li>
+      <li>字符类型的字面常量</li>
+      <li>字符类型的声明与初始化</li>
+      <li>字符类型的常见使用方法</li>
+    </ul>
+    <li>基本数据类型之间的转换</li>
+  </ul>
+  <li><a href="#基本数据结构">基本数据结构</a></li>
+  <ul>
+    <li>枚举</li>
+    <li>数据组合(数组 Array)</li>
+    <li>字符串</li>
+    <li>动态数据组合(ArrayList)</li>
+    <li>可变字符串(StringBuild)</li>
+    <li>哈希表</li>
+  </ul>
+  <li><a href="#表达式与运算符">表达式与运算符</a></li>
+  <ul>
+    <li>表达式</li>
+    <li>运算符</li>
+    <ul>
+      <li>算术运算符</li>
+      <ul>
+        <li>自增<code>++</code></li>
+        <li>自减<code>--</code></li>
+        <li>加法<code>+</code></li>
+        <li>减法<code>-</code></li>
+        <li>乘法<code>*</code></li>
+        <li>除法<code>/</code></li>
+        <li>取余<code>%</code></li>
+      </ul>
+
+      <li>关系运算符</li>
+      <ul>
+        <li>大于<code>&gt;</code></li>
+        <li>小于<code>&lt;</code></li>
+        <li>等于<code>=</code></li>
+        <li>大于等于<code>&gt;=</code></li>
+        <li>小于等于<code>&lt;=</code></li>
+        <li>不等于<code>!=</code></li>
+      </ul>
+      <li>布尔运算符</li>
+      <ul>
+        <li>非短路逻辑与<code>&</code></li>
+        <li>短路逻辑与<code>&&</code></li>
+        <li>逻辑或<code>||</code></li>
+        <li>逻辑非<code>!</code></li>
+      </ul>
+      <li>位运算符</li>
+      <ul>
+        <li>按位与<code>&</code></li>
+        <li>按位或<code>|</code></li>
+        <li>按位异或<code>^</code></li>
+        <li>按位取反<code>~</code></li>
+        <li>右移位<code>&gt;&gt;</code></li>
+        <li>左移位<code>&lt;&lt;</code></li>
+      </ul>
+      <li>赋值运算符</li>
+      <ul>
+        <li>赋值<code>=</code></li>
+        <li>先加后赋值<code>+=</code></li>
+        <li>先减后赋值<code>-=</code></li>
+        <li>先乘后赋值<code>*=</code></li>
+        <li>先除后赋值<code>/=</code></li>
+        <li>先取余后赋值<code>%=</code></li>
+        <li>先按位与后赋值<code>&=</code></li>
+        <li>先按位或后赋值<code>|=</code></li>
+        <li>先右移后赋值<code>&gt;&gt;=</code></li>
+        <li>先左移后赋值<code>&lt;&lt;=</code></li>
+        <li>先异或后赋值<code>^=</code></li>
+      </ul>
+      <li>其他运算符</li>
+      <li>运算符的优先级</li>
+      <li>运算符与数据类型总结</li>
+    </ul>
+  </ul>
+  <li><a href="#流程控制">流程控制</a></li>
+  <ul>
+    <li>判断</li>
+    <li>循环</li>
+    <li>跳转</li>
+  </ul>
+  <li><a href="#异常">异常</a></li>
+  <ul>
+    <li>try</li>
+    <li>throw</li>
+    <li>catch</li>
+    <li>finally</li>
+  </ul>
+  <li><a href="#函数">函数</a></li>
+  <ul>
+    <li>函数声明与使用</li>
+    <li>函数输入与输出</li>
+    <li>函数重载</li>
+  </ul>
+  <li><a href="#指针">指针</a></li>
+  <li><a href="#结构体">结构体</a></li>
+  <ul>
+    <li>数据</li>
+    <ul>
+      <li>字段 field </li>
+      <li>常量 constant</li>
+    </ul>
+    <li>操作</li>
+    <ul>
+      <li>方法 method</li>
+      <li>属性 property</li>
+      <li>构造器 </li>
+
+    </ul>
+  </ul>
+  <li><a href="#面向对象(基础)">面向对象(基础)</a></li>
+  <ul>
+    <li>面向对象概述</li>
+    <li>类与实例</li>
+    <li>类中的成员</li>
+    <ul>
+      <li>数据成员</li>
+      <li>操作成员</li>
+    </ul>
+    <li>封装</li>
+    <ul>
+      <li>访问修饰符</li>
+ 
+    </ul>
+    <li>继承</li>
+    <li>多态</li>
+    <li>类型(type): 类(class) 结构体(struct) 记录(record)</li>
+  </ul>
+  <li><a href="#面向对象(高级)">面向对象(高级)</a></li>
+
+
+  分部类 静态类 嵌套类 抽象类 密封类
+
+  每种类都是如何表示的, 有哪几种声明修饰符, 有哪些成员, 成员有哪些修饰符.
+
+
+访问限制符 声明修饰符
+
+接口
+
+
+委托 匿名方法 lambda 事件
+
+泛型
+
+特性
+
+反射
+
+
+
+可空类型
+
+预处理器
+
+<li>--------------------------------------</li>
+<li><a href="#标准库简介">标准库简介</a></li>
+<ul>
+  <li>C#的类型系统</li>
+</ul>
+<li><a href="#基本数据类型">基本数据类型</li>
+<ul>
+  <li>Object</li>
+  <li></li>
+</ul>
+<li><a href="#基本数据结构">基本数据结构</li>
+<li><a href="#输入输出">输入输出</a></li>
+<li><a href="#基本数学">基本数学</a></li>
+<li><a href="#文本处理">文本处理</a></li>
+<li><a href="#时间日期">时间日期</a></li>
+<li><a href="#数据安全">数据安全</a></li>
+<li><a href="#网络通信">网络通信</a></li>
+<li><a href="#数据库">数据库</a></li>
+<ul>
+  <li>连接数据库</li>
+  <li>数据库的增删改查</li>
+  <li>LINQ</li>
+</ul>
+<li><a href="#多线程">多线程</a></li>
+<li><a href="#跨语言编程">跨语言编程</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+<h2 id="CSharp介绍与编程环境设置">CSharp介绍与编程环境设置</h2>
+
+<h2 id="HelloWorld与注释">HelloWorld与注释</h2>
+
+<pre><code>
+using System;
+
+namespace HelloWorld
+{
+    class HelloWorld
+    {
+        static void Main(string[] args)
+        {
+           
+            Console.WriteLine("Hello World!");
+            // 这是单行注释
+            /* 
+             * 这是多行注释
+             * 这是多行注释
+             */
+        }
+    }
+}
+</code></pre>
+
+<p>注意: Main函数为入口.</p>
+<p>每一行以英文分号<b>;</b>结尾.</p>
+
+<h3>CSharp的基本程序结构</h3>
+
+
+<ul>
+  <li>命名空间 namespace</li>
+  <ul>
+    <li>类 class</li>
+    <ul>
+      <li>常量 constant</li>
+      <li>字段 field</li>
+      <li>方法 method</li>
+      <li>属性 property</li>
+      <li>事件 event</li>
+      <li>操作符 operator</li>
+      <li>索引器 indexer</li>
+      <li>实例构造器 instance constructor</li>
+      <li>静态构造器 static constructor</li>
+      <li>终结器 finalizer</li>
+      <li>嵌套类 class</li>
+    </ul>
+    <li>结构体 struct</li>
+    <ul>
+      <li>常量 constant</li>
+      <li>字段 field </li>
+      <li>方法 method</li>
+      <li>属性 property</li>
+      <li>事件 event</li>
+      <li>索引器 indexer</li>
+      <li>操作符 operator</li>
+      <li>构造器 constructor</li>
+      <li>静态构造器 static constructor</li>
+      <li>fixed size buffer(only in Unsafe Mode)</li>
+    </ul>
+    <li>接口 interface</li>
+    <ul>
+      <li>接口-方法 interface_method</li>
+      <li>接口-属性 interface_property</li>
+      <li>接口-事件 interface_event</li>
+      <li>接口-索引器 interface_indexer</li>
+    </ul>
+    <li>委托 delegate</li>
+    <li>枚举 enum</li>
+    <li>命名空间 namespace</li>
+  </ul>
+</ul>
+
+
+
+<pre><code>
+using System;
+
+namespace YourNamespace
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello world!");
+        }
+    }
+
+    class YourClass
+    {
+    }
+
+    struct YourStruct
+    {
+    }
+
+    interface IYourInterface
+    {
+    }
+
+    delegate int YourDelegate();
+
+    enum YourEnum
+    {
+    }
+
+    namespace YourNestedNamespace
+    {
+        struct YourStruct
+        {
+        }
+    }
+
+
+}
+
+</code></pre>
+
+<h2 id="标识符 关键字 变量 常量">标识符 关键字 变量与常量</h2>
+<br>
+
+<p>标识符要求: 字母 数字 下划线, 数字不开头且大小写敏感</p>
+<br>
+
+<p>关键字: <br>abstract as base bool break byte case catch char checked class const continue decimal default delegate do double else enum event explicit extern false finally fixed float for foreach goto if implicit in int interface internal is lock long namespace new null object operator out override params private protected public readonly ref return sbyte sealed short sizeof stackalloc static string struct switch this throw true try typeof uint ulong unchecked unsafe ushort using virtual void volatile while</p>
+<br>
+
+<p>上下文关键字: <br>add allows alias and ascending args async await by descending dynamic equals extension field file from get global group init into join let managed nameof nint not notnull nuint on or orderby
+partial record remove required scoped select set unmanaged value var when where with yield</p>
+<br>
+
+
+<p>变量声明与初始化: <code>数据类型 变量名称 = 数据的值;</code><br>&ensp;&ensp;&ensp;&ensp;示例: <code>int a = 42;</code><br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<code>Stopwatch stopWatch = new Stopwatch();</code></p>
+<p>常量声明与初始化: <code>const 数据类型 变量名称 = 数据的值;</code><br>&ensp;&ensp;&ensp;&ensp;示例: <code>const int a = 42;</code></p>
+<br>
+
+<p>变量与常量的作用范围: </p>
+
+
+
+<h2 id="基本数据类型">基本数据类型</h2>
+<p>基本数据类型包括: 布尔类型 整数类型 浮点类型 字符类型 </p>
+<p>每种类型的主要内容: 静态数据, 静态操作; 实例数据, 实例操作; 类型使用示例.</p>
+<br>
+
+<h3>布尔类型</h3>
+<table class="table table-bordered">
+    <thead>
+      <tr><th>常用名</th><th>比特位数</th><th>表示内容</th><th>表示范围</th><th>标准库位置</th><th>默认值</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>bool</td><td>8位比特</td><td>真假</td><td>ture和false</td><td>System.Boolean</td><td>false</td></tr>
+    </tbody>
+</table>
+<br>
+
+<h4>布尔类型的字面常量</h4>
+<p>布尔类型的字面常量有两种: 分别为<code>true</code>和<code>false</code></p>
+<br>
+
+<h4>布尔类型的静态数据与静态操作</h4>
+<br>
+
+<p>静态数据: </p>
+<table class="table table-bordered">
+    <thead>
+      <tr><th>名称</th><th>返回类型</th><th>数据的值</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Boolean.FalseString</td><td>String</td><td>False</td></tr>
+      <tr><td>Boolean.TrueString</td><td>String</td><td>True</td></tr>
+    </tbody>
+</table>
+<br>
+
+
+<p>静态操作: </p>
+<table class="table table-bordered">
+    <thead>
+      <tr><th>名称</th>具体信息<th>返回类型</th><th>备注</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Boolean.Parse(string value);</td><td>Boolean</td><td>true if value is equivalent to TrueString; false if value is equivalent to FalseString.</td></tr>
+      <tr><td>Boolean.Parse(ReadOnlySpan&lt;Char&gt;)</td><td>Boolean</td><td>Converts the specified span representation of a logical value to its Boolean equivalent.</td></tr>
+      <tr><td> </td><td> </td><td> </td></tr>
+      <tr><td> </td><td> </td><td> </td></tr>
+    </tbody>
+</table>
+<br>
+
+
+<h4>布尔类型的实例数据与实例操作</h4>
+<br>
+<p>实例数据: </p>
+<table class="table table-bordered">
+    <thead>
+      <tr><th>名称</th><th>返回类型</th><th>数据的值</th></tr>
+    </thead>
+    <tbody>
+      <tr><td> </td><td> </td><td> </td></tr>
+    </tbody>
+</table>
+<br>
+
+<p>实例操作: </p>
+<table class="table table-bordered">
+    <thead>
+      <tr><th>名称</th><th>介绍</th><th>返回类型</th></tr>
+    </thead>
+    <tbody>
+      <tr><td> </td><td> </td><td> </td></tr>
+      <tr><td> </td><td> </td><td> </td></tr>
+    </tbody>
+</table>
+<br>
+
+
+
+<h4>布尔类型使用实例: </h4>
+
+
+<h3>整数类型</h3>
+<table class="table table-bordered">
+    <thead>
+      <tr><th>常用名</th><th>比特位数</th><th>表示内容</th><th>表示范围</th><th>标准库位置</th><th>默认值</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>byte</td><td>8位比特</td><td>无符号整数</td><td>从0到255之间的整数</td><td>System.Byte</td><td>0</td></tr>
+      <tr><td>sbyte</td><td>8位比特</td><td>有符号整数</td><td>从-128到127之间的整数</td><td>System.SByte</td><td>0</td></tr>
+      <tr><td>short</td><td>16位比特</td><td>有符号整数</td><td>从-32768到32767之间的整数</td><td>System.Int16</td><td>0</td></tr>
+      <tr><td>ushort</td><td>16位比特</td><td>无符号整数</td><td>从0到65535之间的整数</td><td>System.UInt16</td><td>0</td></tr>
+      <tr><td>int</td><td>32位比特</td><td>有符号整数</td><td>从-2147483648到2147483647之间的整数</td><td>System.Int32</td><td>0</td></tr>
+      <tr><td>uint</td><td>32位比特</td><td>无符号整数</td><td>从0到4294967295之间的整数</td><td>System.UInt32</td><td>0</td></tr>
+      <tr><td>long</td><td>64位比特</td><td>有符号整数</td><td>从-9223372036854775808到9223372036854775807之间的整数</td><td>System.Int64</td><td>0</td></tr>
+      <tr><td>ulong</td><td>64位比特</td><td>无符号整数</td><td>从0到18446744073709551615之间的整数</td><td>System.UInt64</td><td>0</td></tr>
+    </tbody>
+</table>
+<br>
+
+<h4>整数类型的字面常量</h4>
+<p>十进制: 不使用任何前缀, 示例: <code>42</code></p>
+<p>十六进制: 使用<code>0x</code>前缀</p>
+<p>二进制: 使用<code>0b</code>前缀</p>
+<p>可以将数字分隔符<b>_</b>用于所有类型的数字文本.</p>
+
+<h4>整数类型的静态数据与静态操作</h4>
+
+
+<h4>整数类型的实例数据与实例操作</h4>
+
+
+
+
+
+<h3>浮点类型</h3>
+
+<h4>二进制浮点类型</h4>
+<table class="table table-bordered">
+    <thead>
+      <tr><th>常用名</th><th>比特位数</th><th>精度范围</th><th>表示范围</th><th>标准库位置</th><th>默认值</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>float</td><td>32位比特</td><td>7位</td><td>正负(从1.5×10⁻⁴⁵到3.4×10³⁸之间的小数以及 零 无穷)</td><td>System.Single</td><td>0.0f</td></tr>
+      <tr><td>double</td><td>64位比特</td><td>15位</td><td>正负(从5.0×10⁻³²⁴到1.7×10³⁰⁸之间的小数以及 零 无穷)</td><td>System.Double</td><td>0.0d</td></tr>
+    </tbody>
+</table>
+
+<p><code>0.0</code>或<code>0.0d</code>表示双精度浮点数.</p>
+<p><code>0.0f</code>表示单精度浮点数.</p>
+
+<h4>十进制浮点类型</h4>
+<table class="table table-bordered">
+    <thead>
+      <tr><th>常用名</th><th>比特位数</th><th>精度范围</th><th>表示范围</th><th>标准库位置</th><th>默认值</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>decimal</td><td>128位比特</td><td>28位</td><td>正负(7.9×10⁻²⁸到7.9×10²⁸)</td><td>System.Decimal</td><td>0.0m</td></tr>
+    </tbody>
+</table>
+<p><code>0.0m</code>表示一个十进制类型浮点数.</p>
+
+
+
+
+<h3>字符类型</h3>
+<table class="table table-bordered">
+    <thead>
+      <tr><th>常用名</th><th>比特位数</th><th>表示内容</th><th>标准库位置</th><th>默认值</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>char</td><td>16位比特</td><td>UTF-16</td><td>System.Char</td><td>\x0000</td></tr>
+    </tbody>
+</table>
+<p>如果字符文本表示的值大于U+FFFF, 则会发生编译时错误.</p>
+<p>使用<b>'</b>包起来的单个字符(或转义)是字符类型, 例如<code>'a'</code>.</p>
+<p>常见转义字符: </p>
+<table class="table table-bordered"> 
+  <thead>
+    <tr><th>写法</th><th>含义</th><th>Unicode码位</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>\u</td><td>utf-16转义, 后接四位16进制数.</td><td> </td></tr>
+    <tr><td>\'</td><td>单引号</td><td>U+0027</td></tr>
+    <tr><td>\"</td><td>双引号</td><td>U+0022</td></tr>
+    <tr><td>\\</td><td>反斜杠</td><td>U+005C</td></tr>
+    <tr><td>\0</td><td>Null</td><td>U+0000</td></tr>
+    <tr><td>\a</td><td>Alert</td><td>U+0007</td></tr>
+    <tr><td>\b</td><td>Backspace</td><td>U+0008</td></tr>
+    <tr><td>\f</td><td>换页</td><td>U+000C</td></tr>
+    <tr><td>\n</td><td>换行</td><td>U+000A</td></tr>
+    <tr><td>\r</td><td>回车</td><td>U+000D</td></tr>
+    <tr><td>\t</td><td>水平制表符</td><td>U+0009</td></tr>
+    <tr><td>\v</td><td>垂直制表符</td><td>U+000B</td></tr>
+  </tbody>
+</table>
+
+
+<h2 id="基本数据结构">基本数据结构</h2>
+
+枚举 Enum 
+
+数组 Array
+
+Array list
+
+Hash Table
+
+<h2 id="表达式与运算符">表达式与运算符</h2>
+
+<h3>运算符</h3>
+
+<p>运算符分为二元运算符与三元运算符.</p>
+
+<p>算术运算符: </p>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>算术运算符</th><th>含义</th><th>示例</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>+</td><td>加法</td><td>a + b</td></tr>
+    <tr><td>-</td><td>减法</td><td>a - b</td></tr>
+    <tr><td>*</td><td>乘法</td><td>a * b</td></tr>
+    <tr><td>/</td><td>除法</td><td>a / b</td></tr>
+    <tr><td>%</td><td>取余</td><td>a % b</td></tr>
+    <tr><td>++</td><td>自增</td><td>a++</td></tr>
+    <tr><td>--</td><td>自减</td><td>a++</td></tr>
+  </tbody>
+</table>
+
+
+
+
+<h2 id="流程控制">流程控制</h2>
+
+判断 循环 跳转
+
+<h3>判断</h3>
+<pre><code>
+if(布尔变量或表达式01)
+{
+    /*当布尔变量或表达式01为真时执行*/
+}
+else if(布尔变量或表达式02)
+{
+    /*当布尔变量或表达式02为真时执行*/
+    /*else if是可选的, 但必须在if之后*/
+}
+else if(布尔变量或表达式03)
+{
+    /*当布尔变量或表达式03为真时执行*/
+    /*else if是可选的, 但必须在if之后*/
+}
+else 
+{
+    /*当上面条件都不为真时执行*/
+    /*else是可选的, 但必须在if与else if之后*/
+}
+</code></pre>
+
+<pre><code>
+switch(变量或表达式A)
+{
+    case 常量或常量表达式01:
+    {
+        /*当变量或表达式A = 常量或常量表达式01时, 执行代码*/
+        break;
+    }
+        
+    case 常量或常量表达式02:
+    {
+        /*当变量或表达式A = 常量或常量表达式02时, 执行代码*/
+        break;
+    }
+        
+    default :
+    {
+        /*default是可选的, 当变量或变量表达式A不符合任何常量或常量表达式时, 执行代码*/
+        break;
+    }
+        
+}
+</code></pre>
+
+<h3>循环</h3>
+<pre><code>
+while(布尔变量或表达式A)
+{
+    /*当布尔变量或表达式A为真时运行代码*/
+    /*记得调整布尔变量或表达式A的值, 以控制循环语句何时结束*/
+}
+</code></pre>
+
+<pre><code>
+do
+{
+    /*当布尔变量或表达式A的值为真时执行代码*/
+    /*语句块中的代码将至少执行一次, 然后再进行条件判断*/
+    /*记得调整布尔变量或表达式A的值, 以控制循环语句何时结束*/
+}
+while(布尔变量或表达式A);
+</code></pre>
+
+<pre><code>
+for (初始化语句; 布尔变量或表达式A; 调整布尔变量或表达式A的值, 以控制循环语句何时结束)
+{
+    /*初始化语句仅执行一遍, 一般用于初始化布尔变量或表达式A中的变量*/
+    /*当布尔变量或表达式A的值为真时运行代码*/
+}
+</code></pre>
+
+<pre><code>
+foreach (类型名 变量名 in 集合)
+{
+    /*集合中的每一个对象将以变量名的形式参与一次循环*/
+}
+</code></pre>
+
+
+
+<h2 id="异常">异常处理</h2>
+
+<pre><code>
+try
+{
+  //可能出现异常的代码
+  //当代码出现异常后, 使用throw语句抛出对应的异常
+}
+catch(异常类名 异常变量名)
+{
+  //对异常进行处理的代码
+}
+finally
+{
+  //不论是否发生异常, 都必须执行的代码
+  //这一部分通常用来释放使用的资源
+}
+</code></pre>
+
+<h2 id="函数">函数</h2>
+
+<h2 id="结构体">结构体</h2>
+
+<h2 id="指针">指针</h2>
+
+<p>想要在C#中使用指针, 需要</p>
+
+<h2 id="面向对象(基础)">面向对象(基础)</h2>
+
+类与实例
+封装 继承 多态
+
+类的方法与字段
+
+封装
+
+<p><mark>可访问性标记: </mark></p>
+<table class="table table-bordered">
+  <thead>
+    <tr><th>标记</th><th>含义</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>public</td><td>公开: 访问不受限制</td></tr>
+    <tr><td>protected</td><td>受保护: 访问仅限于自身以及派生的类</td></tr>
+    <tr><td>internal</td><td>内部: 访问仅限于本程序集</td></tr>
+    <tr><td>internal protected</td><td>内部受保护: 访问仅限于自身以及派生的类或本程序集中的类 </td></tr>
+    <tr><td>private protected</td><td>私有受保护: </td></tr>
+    <tr><td>private</td><td>私有: 访问仅限于自身</td></tr>
+  </tbody>
+</table>
+
+
+继承
+
+多态
+
+
+
+
+
+
+<h2 id="面向对象(高级)">面向对象(高级)</h2>
+
+分部类 静态类 嵌套类 抽象类   
+
+<h3>类中的成员</h3>
+
+<p>C#中的类的成员分为两部分, 数据与操作.</p>
+<p>数据: 字段(Fields) 常量(Constant) 只读(Read-only) 事件(Event)</p>
+<p>操作: 方法(Methods) 属性(Property) 运算符(Operator) 索引器(Indexer) 实例构造器(Instance Constructor) 静态构造器(Static Constructor) 终结器(Finalizer)</p>
+
+<p>类声明可以包含常量, 字段, 方法, 属性, 事件, 索引器, 运算符, 实例构造器, 静态构造器, 终结器和嵌套类型.</p>
+<p>继承: 从基类继承的成员包括常量, 字段, 方法, 属性, 事件, 索引器, 运算符和基类的类型，但不包括基类的实例构造函数, 静态构造函数和终结器。</p>
+<p>在继承方面, C#中只能使用单继承, 所有类的最终基类都是Object.</p>
+
+
+
+
+<h3>接口</h3>
+
+<h3>泛型</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="标准库简介">标准库简介</h2>
+<p>C#有着完善的标准库, 在使用第三方库之前要记得看看标准库.</p>
+<p>标准库类的继承关系: </p>
+
+<h2 id="输入输出"></h2>
+
+<h3>控制台</h3>
+
+<p>控制台输出字符串带换行: <code>Console.WriteLine();</code></p>
+<p>控制台输出字符串不带换行: <code>Console.Write();</code></p>
+<p>控制台读取用户单个字符输入: <code>Console.ReadKey();</code></p>
+<p>控制台读取用户字符串输入: <code>Console.ReadLine();</code></p>
+
+<h3>文件系统</h3>
+
+<p>读取文件: </p>
+
+<p>写入文件: </p>
+
+<h2 id="基本数学">基本数学</h2>
+
+<h2 id="文本处理">文本处理</h2>
+
+<h2 id="时间日期">时间日期</h2>
+
+<h2 id="网络通讯">网络通讯</h2>
+
+<h2 id="加密解密">加密解密</h2>
+
+<h2 id="数据库">数据库</h2>
+
+<h2 id="多线程">多线程</h2>
+
+<h2 id="跨语言编程">跨语言编程</h2>
+

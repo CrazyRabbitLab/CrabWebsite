@@ -1,0 +1,46 @@
+@page
+
+
+<h1>Godot 游戏制作</h1>
+
+
+<h2>源码编译</h2>
+
+<p>基础环境: Docker-Debian</p>
+
+<pre><code>docker run --name godot -itd debian /bin/bash</code></pre>
+<pre><code>docker exec -it godot /bin/bash</code></pre>
+
+
+<p>命令列表:</p>
+
+<pre><code>apt update</code></pre>
+<pre><code>apt upgrade</code></pre>
+<pre><code>apt install git -y</code></pre>
+<pre><code>apt install clang -y</code></pre>
+<pre><code>
+apt-get update
+apt-get install -y \
+  build-essential \
+  scons \
+  pkg-config \
+  libx11-dev \
+  libxcursor-dev \
+  libxinerama-dev \
+  libgl1-mesa-dev \
+  libglu1-mesa-dev \
+  libasound2-dev \
+  libpulse-dev \
+  libudev-dev \
+  libxi-dev \
+  libxrandr-dev \
+  libwayland-dev
+</code></pre>
+<pre><code>cd home</code></pre>
+<pre><code>git clone https://github.com/godotengine/godot.git</code></pre>
+<pre><code>cd godot</code></pre>
+<pre><code>scons platform=linuxbsd use_llvm=yes production=yes</code></pre>
+
+<p>编译产物:</p>
+
+<p>编译产物位于./bin中</p>

@@ -1,0 +1,61 @@
+@page
+
+<h1>OpenUSD</h1>
+
+<p>参考资料: </p>
+
+<ul>
+    <li>https://github.com/PixarAnimationStudios/OpenUSD</li>
+    <li>https://docs.omniverse.nvidia.com/usd/latest/usdview/quickstart.html</li>
+</ul>
+
+<h2>源码编译</h2>
+
+<p>基础环境-Windows 24h2 LTSC</p>
+
+<p>要求环境支持OpenGL4.5及以上.</p>
+
+<p>安装VisualStudio</p>
+
+<p>安装Python</p>
+<p>注意, 安装python要添加到系统path, 可以重启命令行再试一次.</p>
+
+<p>注意网络问题, 中国大陆访问github或python可能出现网络问题.</p>
+
+<pre><code>git clone https://github.com/PixarAnimationStudios/OpenUSD</code></pre>
+
+<pre><code>python.exe -m pip install --upgrade pip</code></pre>
+
+<pre><code>pip install PyOpenGL</code></pre>
+
+<pre><code>pip install PySide6</code></pre>
+
+<p>使用x64 native tools Command Prompt for vs2022</p>
+
+<pre><code>python "C:\Users\Administrator\Desktop\Code\OpenUSD\build_scripts\build_usd.py" "C:\Users\Administrator\Desktop\OpenUSD"</code></pre>
+
+<p>注意: 文件路径问题 网络访问问题.</p>
+
+
+<p>安装需要一点时间, 喝杯咖啡吧.</p>
+<p>一切顺利的话, 应该能正常运行了.</p>
+
+<p>下述添加入系统path: </p>
+
+<pre><code>C:\Users\Administrator\Desktop\OpenUSD\bin</code></pre>
+<pre><code>C:\Users\Administrator\Desktop\OpenUSD\lib</code></pre>
+<p>新建名为PYTHONPATH的系统变量, 将下述内容添加进去.</p>
+<p>注意, 具体文件路径要依据情况修改.</p>
+<pre><code>C:\Users\Administrator\Desktop\OpenUSD\lib\python</code></pre>
+<pre><code>C:\Software\Python\3.13.2</code></pre>
+<pre><code>C:\Software\Python\3.13.2\Lib\site-packages</code></pre>
+
+<pre><code>cd C:\Users\Administrator\Desktop\OpenUSD\bin</code></pre>
+<pre><code>.\usdview C:\Users\Administrator\Desktop\Code\OpenUSD\extras\usd\tutorials\convertingLayerFormats\Sphere.usda</code></pre>
+
+<h2>Nvidia的USD Viewer使用笔记</h2>
+
+<p>下载运行包: https://developer.nvidia.com/usd#section-getting-started</p>
+
+<p>使用powershell运行下述命令即可: </p>
+<pre><code>.\scripts\usdview_gui.bat</code></pre>

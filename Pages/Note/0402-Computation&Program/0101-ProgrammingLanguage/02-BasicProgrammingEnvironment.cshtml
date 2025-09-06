@@ -1,0 +1,120 @@
+@page
+
+<h1>基础编程环境 BasicProgrammingEnvironment</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* 
+<ul>
+    <li>编程环境准备</li>
+    <li>HelloWorld</li>
+    <li>注释</li>
+</ul>
+
+
+<h2>C#的编程环境设置</h2>
+<p>编程环境：编程环境指的是在进行编程时所要使用的一系列工具. 编程环境就好像厨师的厨房, 里面有很多用来做饭的工具.</p>
+<p>C#编程环境设置: 我们需要下载dotnet并安装, 其网址为: <b>dotnet.microsoft.com/download</b>.</p>
+<p>下载安装完成后, 我们可以打开终端模拟器, 并输入: <code>dotnet</code>.</p>
+<p>当我们看到类似下面这种输出时, 则代表安装成功.</p>
+<pre><code>
+Usage: dotnet [options]
+Usage: dotnet [path-to-application]
+
+Options:
+  -h|--help         Display help.
+  --info            Display .NET information.
+  --list-sdks       Display the installed SDKs.
+  --list-runtimes   Display the installed runtimes.
+
+path-to-application:
+  The path to an application .dll file to execute.
+</code></pre>
+<p>根据个人喜好, 我们还可以下载VSCode作为代码编辑器, 其网址为: https://code.visualstudio.com</p>
+
+<h2>C#的HelloWorld程序</h2>
+<p>新建一个测试文件夹, 名称随意, 下面我们使用<b>HelloWorld</b>.</p>
+<p>打开终端模拟器, 将当前工作目录设置为<b>HelloWorld</b>.</p>
+<p>输入<code>dotnet new console</code>, 等待程序执行完成.</p>
+<p>程序执行完成后, 在<b>HelloWorld</b>文件夹中应当出现<b>obj</b>文件夹和<b>Program.cs</b>以及<b>HelloWorld.csproj</b>两个文件.</p>
+<p>在终端模拟器中输入: <code>dotnet run</code>, 我们会看到<b>Hello, World!</b>的输出.</p>
+<p>接下来打开<b>Program.cs</b>文件, 清空已有字符, 复制并粘贴下面的代码.</p>
+<pre><code>
+using System;
+namespace HelloWorldApplication
+{
+    class HelloWorld
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("HelloWorld!");
+        }
+    }
+}
+</code></pre>
+<p>在终端模拟器中运行命令: <b>dotnet run</b>.</p>
+<p>我们会在终端模拟器中看到如下输出: <b>HelloWorld!</b>.</p>
+<p>上述代码中, 有大量暂时不用关注的细节, 这里我们主要关注一行语句: <code>Console.WriteLine("HelloWorld!");</code>.</p>
+<p>在这行语句中, 我们可以通过替换双引号中的内容, 实现不同的终端模拟器输出.</p>
+<p>比如我们可以将<b>HelloWorld!</b>替换为<b>为什么要演奏春日影!</b>.</p>
+<p>然后在终端模拟器中运行命令: <b>dotnet run</b>.</p>
+<p>我们就可以观察到对应的输出变成了: <b>为什么要演奏春日影!</b></p>
+<p>需要注意的是: 括号中的双引号不要少.</p>
+<p>需要注意的是: C#所有语句和表达式必须以<b>;</b>(分号)结尾, 一个分号代表一个程序语句的结束.</p>
+
+<h2>注释</h2>
+
+<h3>特性思考: 注释</h3>
+<p>在计算机高级编程语言中, 注释是一种十分常见的语言特性.</p>
+<p>在编译器将高级语言转换成机器语言的过程中, 注释会被自动忽略.</p>
+<p>所以注释对于程序的运行并没有什么影响.</p>
+<p>但是注释允许我们对程序进行标注, 便于其他人也包括未来的自己理解程序的运行逻辑.</p>
+<p>注释存在的意义是方便人类阅读, 编译程序会自动跳过所有的注释, 但人类需要注释来辅助理解程序, 就好像我们在图书上做的笔记.</p>
+<p>所以在编写程序的过程中, 写出准确完整的注释来标注程序的运行逻辑是一个良好的习惯.</p>
+
+<h3>C#中的注释介绍</h3>
+<p>在C#中, 我们使用<b>//注释内容</b>来表明这是单行注释, 使用<b>/*注释内容\n注释内容*/</b>来表明这是多行注释, 其中<b>\n指的是换行符</b>.</p>
+
+<h3>C#中的注释示例</h3>
+<pre><code>
+using System;
+namespace HelloWorldApplication
+{
+    class HelloWorld
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("HelloWorld!");
+            // 这是单行注释
+            /* 这是多行注释
+               这是多行注释
+               这是多行注释 */
+        }
+    }
+}
+</code></pre>
+ *@

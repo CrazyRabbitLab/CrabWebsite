@@ -1,0 +1,179 @@
+@page
+
+
+<h1>Docker 进程隔离</h1>
+
+
+<h2>登录问题</h2>
+
+<p>(HTTP code 500) server error - unauthorized: incorrect username or password</p>
+
+<pre><code>docker logout</code></pre>
+
+<pre><code>docker login --username your_username_here</code></pre>
+
+@* <pre><code>docker login --username crazyrabbitlab</code></pre> *@
+
+<p>注意username的大小写问题.</p>
+<p>注意: Docker Desktop中登录后不一定可用, 有时必须要使用命令行登录.</p>
+
+
+<h2>DockerDesktop 网络代理设置</h2>
+
+<p>Settings->Resources->Proxies: </p>
+<p>打开Manual Proxy Configuration</p>
+<p>在Secure Web Server(HTTPS)中填写代理地址: <pre><code>http://127.0.0.1:10808</code></pre></p>
+
+
+
+<h2>使用netch代理</h2>
+
+<pre><code>
+// 使用netch代理docker时, 不必设置其他内容, 仅仅需要在netch配置文件中添加docker desktop的路径即可.#include
+// 也就是: ^C:\\Program Files\\Docker\\Docker\\
+</code></pre>
+
+
+<h2>设置wsl2作为后端时, docker的资源占用</h2>
+
+<p>新建文件: C:/Users/Administrator/.wslconfig</p>
+
+<p>文件内容如下, 根据需要调整:</p>
+<pre><code>
+[wsl2]
+processors=24
+memory=48GB
+</code></pre>
+电脑重启后生效
+
+<h2>新建docker容器</h2>
+
+<pre><code>docker run --name godot -itd debian /bin/bash</code></pre>
+<pre><code>docker exec -it godot /bin/bash</code></pre>
+
+<h2>停止docker容器</h2>
+<pre><code>docker stop 容器名称</code></pre>
+
+<h2>启动docker容器</h2>
+<pre><code>docker start 容器名称</code></pre>
+
+<h2>导出Docker容器</h2>
+<pre><code>docker </code></pre>
+
+
+<h2>导入Docker容器</h2>
+<pre><code>docker </code></pre>
+
+
+
+
+
+<h2>Docker Code Server</h2>
+
+<pre><code>
+docker run --name code-server -itd -p 8080:8080 debian /bin/bash
+
+docker exec -it code-server /bin/bash
+
+apt update
+apt upgrade -y
+apt install curl -y
+curl -fsSL https://code-server.dev/install.sh | sh
+code-server --host 0.0.0.0
+
+cat ~/.config/code-server/config.yaml
+
+docker stop code-server
+
+docker start code-server
+
+docker export code-server -o code-server.tar
+
+// windows平台不要用docker export Container > Container_Backup.tar
+
+docker import code-server.tar code-server:250406
+
+docker run --name code-server -itd -p 8080:8080 code-server:250406 /bin/bash
+
+docker exec -it code-server /bin/bash
+
+code-server --host 0.0.0.0
+
+http://127.0.0.1:8080/
+
+password: xxxxxxxxxxxxxxxx
+</code></pre>
+
+
+<h2>基础编程环境搭建</h2>
+
+<pre><code>
+    
+docker run --name VSCodeServer -itd debian /bin/bash
+
+docker exec -it VSCodeServer /bin/bash
+
+docker export vscode-server -o vscode-server-250407.tar
+
+docker import vscode-server-250407.tar vscode-server:250407
+
+docker run --name dotnet-sdk-9.0 -itd vscode-server:250407 /bin/bash
+
+
+docker export dotnet-sdk-9.0 -o dotnet-sdk-9.0-250407.tar
+
+docker import dotnet-sdk-9.0-250407.tar dotnet-sdk-9.0:250407
+
+
+docker run --name clang -itd vscode-server:250407 /bin/bash
+
+
+docker export clang -o clang-250407.tar
+
+docker import clang-250407.tar clang:250407
+
+
+docker run --name asp.net-core -itd dotnet-sdk-9.0:250407 /bin/bash
+
+</code></pre>
+
+
+
+<pre><code>
+---------------------------------------------------------
+
+docker run --name debian -itd debian /bin/bash
+
+docker export debian -o debian-250406.tar
+
+docker import debian-250406.tar debian:250406
+
+docker run --name xrdp -p 33890:3389 -itd debian:250406 /bin/bash
+
+docker exec -it xrdp /bin/bash
+
+passwd root
+// 测试密码是123456789
+
+apt update
+apt upgrade -y
+DEBIAN_FRONTEND=noninteractive
+
+apt install xfce4 xrdp dbus-x11 -y
+
+service xrdp stop
+echo xfce4-session >~/.xsession
+service xrdp start
+
+// 在windows宿主机中使用mstsc连接localhost:33890即可.
+
+
+docker export xrdp -o xrdp-250408.tar
+
+docker import xrdp-250408.tar xrdp:250408
+
+docker run --name xrdp-test -p 33890:3389 -itd xrdp:250408 /bin/bash
+
+service xrdp stop
+service xrdp start
+</code></pre>

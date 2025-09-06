@@ -1,0 +1,35 @@
+@page
+
+<h1>FFmpeg</h1>
+
+<p>关于无损压缩</p>
+<pre><code>ffmpeg -hide_banner -framerate 60 -i "%06d.png"  -c:v ffv1 "Main_Lossless_ffv1.mp4"</code></pre>
+
+<pre><code>ffmpeg -hide_banner -framerate 60 -i "%06d.png" -c:v libx265 -x265-params lossless=1 "Main_Lossless_libx265.mp4"</code></pre>
+
+<pre><code>ffmpeg -hide_banner -framerate 60 -i "%06d.png" -c:v libx264 -qp 0 "Main_Lossless_libx264.mp4"</code></pre>
+
+<p>查看关于ffv1的帮助<p>
+<pre><code>ffmpeg -hide_banner -h encoder=ffv1</code></pre>
+
+<p>建议使用无损压缩视频序列帧时, 使用RGB而不是RGBA, 带有透明通道有时候会出各种问题.</p>
+
+<hr>
+<p>FFmpeg调用NvEnc-PNG序列无损转HEVC: </p>
+<p>查看PPmpeg中NvEnc的帮助选项: </p>
+<pre><code>ffmpeg -hide_banner -h encoder=hevc_nvenc</code></pre>
+<p>注意: 下述命令默认视频是60帧每秒的.</p>
+<p>使用NVENC时, png序列不要有alpha通道, 不然的话会有RGB->YUV420的色彩损失.</p>
+<p>注意: AE导出时, Channels必须是RGB, 不带Alpha通道的那种. 不然会有色彩损失. Alpha通道需要的话可以单独导出.</p>
+<pre><code>ffmpeg -hide_banner -framerate 60 -i "Main_%06d.png" -c:v hevc_nvenc -tune lossless "Main_Lossless.mp4"</code></pre>
+<p>Houdini渲染序列时, 要把KarmaRenderSettings->ImageOutput->AOVs(RenderVars)->Beauty中的Beauty取消勾选, 这样就可以仅输出RGB通道了.</p>
+<pre><code>ffmpeg -hide_banner -framerate 60 -i "%06d.png" -c:v hevc_nvenc -tune lossless "Main_Lossless.mp4"</code></pre>
+
+
+<p>流媒体网站视频上传的FFmpeg命令行: </p>
+<pre><code>ffmpeg -hide_banner -i "Main.mp4"  -r 60 -vf zscale=matrix=709:r=limited,format=yuv420p,scale=1080:2160 -b:v 20000k -maxrate 30000k -c:v hevc_nvenc -preset p7 -c:a aac -ar 48000 -ac 2 -b:a 320k "Main_Upload.mp4"</code></pre>
+
+<pre><code>ffmpeg -hide_banner -i "Main_Lossless.mp4"  -r 60 -vf zscale=matrix=709:r=limited,format=yuv420p,scale=1080:2160 -b:v 20000k -maxrate 30000k -c:v hevc_nvenc -preset p7 -c:a aac -ar 48000 -ac 2 -b:a 320k "Main_Upload.mp4"</code></pre>
+
+
+

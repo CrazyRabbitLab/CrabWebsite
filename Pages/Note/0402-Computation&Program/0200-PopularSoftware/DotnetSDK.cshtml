@@ -1,0 +1,76 @@
+@page
+
+
+<h1>DotnetSDK</h1>
+
+
+<p>dotnet watch 热重载</p>
+
+<p>关于dotnet script的安装</p>
+
+<p>在已经安装dotnet 8.0及以上SDK的情况下: </p>
+
+<p>运行<code>dotnet tool install -g dotnet-script</code></p>
+
+<p>查看已经安装了哪些全局工具: <code>dotnet tool list -g</code></p>
+
+<p>卸载dotnet script: <code>dotnet tool uninstall dotnet-script -g</code></p>
+
+
+
+
+
+<pre><code>
+&lt;Project Sdk="Microsoft.NET.Sdk"&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;Exe&lt;/OutputType&gt;
+    &lt;TargetFramework&gt;net9.0&lt;/TargetFramework&gt;
+    &lt;ImplicitUsings&gt;enable&lt;/ImplicitUsings&gt;
+    &lt;Nullable&gt;enable&lt;/Nullable&gt;
+
+    &lt;SelfContained&gt;true&lt;/SelfContained&gt;
+    &lt;PublishSingleFile&gt;true&lt;/PublishSingleFile&gt;
+    &lt;PublishReadyToRun&gt;true&lt;/PublishReadyToRun&gt;
+    &lt;!-- 部分情况不支持裁剪, 注意 --&gt;
+    &lt;PublishTrimmed&gt;true&lt;/PublishTrimmed&gt;
+
+    &lt;!-- 跨平台AOT目前不支持 --&gt;
+    &lt;!-- apt-get install clang zlib1g-dev --&gt;
+    &lt;PublishAot>true&lt;/PublishAot&gt;
+  &lt;/PropertyGroup&gt;
+
+&lt;/Project&gt;
+
+</code></pre>
+
+
+<pre><code>
+// dotnet publish -r win-x64
+// dotnet publish -r osx-x64
+// dotnet publish -r linux-x64
+// dotnet publish -r win-arm64
+// dotnet publish -r osx-arm64
+// dotnet publish -r linux-arm64
+// -------------------------------
+// 下面在宿主机中执行
+
+// docker cp 容器id或名称:/root/HelloWorld/bin/Release/net9.0 C:\Users\Administrator\Desktop
+// 或者VSCode中, 点击对应文件, 右键下载.
+</code></pre>
+
+
+<pre><code>
+using System;
+namespace HelloWorld
+{
+    class HelloWorld
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+
+    }
+}
+</code></pre>
