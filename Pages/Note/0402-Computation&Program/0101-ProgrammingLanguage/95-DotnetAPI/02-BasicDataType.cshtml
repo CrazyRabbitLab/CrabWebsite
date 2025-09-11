@@ -48,7 +48,13 @@
     <li>静态数据</li>
     <ul>
         <li>String Boolean.FalseString</li>
+        <ul>
+            <li>这个字段与字符串"False"等价;</li>
+        </ul>
         <li>String Boolean.TureString</li>
+        <ul>
+            <li>这个字段与字符串"True"等价;</li>
+        </ul>
     </ul>
     <li>静态操作</li>
     <ul>
@@ -61,14 +67,44 @@
     <li>示例操作</li>
     <ul>
         <li>Int32 Instance.CompareTo(Boolean value)</li>
-        <li>Int32 Instance.CompareTo(object? obj)</li>
+        <ul>
+            <li>介绍: 将这个实例本身与特定的布尔对象进行比较, 然后返回一个表明它们之间关系的整数.</li>
+            <li>输入: </li>
+            <ul>
+                <li>value: 一个将用来与这个实例进行比较的布尔对象.</li>
+            </ul>
+            <li>输出: </li>
+            <ul>
+                <li>输出一个代表这个示例与value之间关系的带符号整数, 其中: </li>
+                <li>当两者都是<code>True</code>或两者都是<code>False</code>时, 返回值是0</li>
+                <li>当实例是<code>False</code>并且value是<code>True</code>时, 返回值小于0</li>
+                <li>当实例是<code>True</code>并且value是<code>False</code>时, 返回值大于0</li>
+            </ul>
+
+        </ul>
+        <li>Int32 Instance.CompareTo(Object? obj)</li>
+        <ul>
+            <li>介绍: 将这个实例与特定的对象进行比较, 然后返回一个表明它们之间关系的整数.</li>
+            <li>输入: </li>
+            <ul>
+                <li>obj: 一个将用来与这个实例进行比较的对象, 或者是<code>null</code></li>
+            </ul>
+            <li>输出: </li>
+            <ul>
+                <li></li>
+            </ul>
+            <li>注意: </li>
+            <ul>
+                <li>obj必须是<code>null</code>或者Boolean的一个实例, 其他情况下会抛出异常ArgumentException</li>
+            </ul>
+        </ul>
         <li>Boolean Instance.Equals(Boolean obj)</li>
-        <li>Boolean Instance.Equals(object? obj)</li>
+        <li>Boolean Instance.Equals(Object? obj)</li>
         <li>Int32 Instance.GetHashCode()</li>
         <li>TypeCode Instance.GetTypeCode()</li>
         <li>String Instance.ToString()</li>
         <li>String Instance.ToString(IFormatProvider? provider)</li>
-        <li>Boolean Instance.TryFormat(Span&lt;char&gt; destination, out int charsWritten)</li>
+        <li>Boolean Instance.TryFormat(Span&lt;char&gt; destination, out Int32 charsWritten)</li>
     </ul>
 </ul>
 
@@ -85,70 +121,70 @@
     </ul>
     <li>静态操作</li>
     <ul>
-        <li>String Char.ConvertFromUtf32(int utf32)</li>
-        <li>Int32 Char.ConvertToUtf32(char highSurrogate, char lowSurrogate)</li>
-        <li>Int32 Char.ConvertToUtf32(string s, int index)</li>
-        <li>Double Char.GetNumericValue(char c)</li>
-        <li>Double Char.GetNumericValue(string s, int index)</li>
-        <li>UnicodeCategory Char.GetUnicodeCategory(char c)</li>
-        <li>UnicodeCategory Char.GetUnicodeCategory(string s, int index)</li>
-        <li>Boolean Char.IsAscii(char c)</li>
-        <li>Boolean Char.IsAsciiDigit(char c)</li>
-        <li>Boolean Char.IsAsciiHexDigit(char c)</li>
-        <li>Boolean Char.IsAsciiHexDigitLower(char c)</li>
-        <li>Char.IsAsciiHexDigitUpper(Char)</li>
-        <li>Char.IsAsciiLetter(Char)</li>
-        <li>Char.IsAsciiLetterLower(Char)</li>
-        <li>Char.IsAsciiLetterOrDigit(Char)</li>
-        <li>Char.IsAsciiLetterUpper(Char)</li>
-        <li>Char.IsBetween(Char, Char, Char)</li>
-        <li>Char.IsControl(Char)</li>
-        <li>Char.IsControl(String, Int32)</li>
-        <li>Char.IsDigit(Char)</li>
-        <li>Char.IsDigit(String, Int32)</li>
-        <li>Char.IsHighSurrogate(Char)</li>
-        <li>Char.IsHighSurrogate(String, Int32)</li>
-        <li>Char.IsLetter(Char)</li>
-        <li>Char.IsLetter(String, Int32)</li>
-        <li>Char.IsLetterOrDigit(Char)</li>
-        <li>Char.IsLetterOrDigit(String, Int32)</li>
-        <li>Char.IsLower(Char)</li>
-        <li>Char.IsLower(String, Int32)</li>
-        <li>Char.IsLowSurrogate(Char)</li>
-        <li>Char.IsLowSurrogate(String, Int32)</li>
-        <li>Char.IsNumber(Char)</li>
-        <li>Char.IsNumber(String, Int32)</li>
-        <li>Char.IsPunctuation(Char)</li>
-        <li>Char.IsPunctuation(String, Int32)</li>
-        <li>Char.IsSeparator(Char)</li>
-        <li>Char.IsSeparator(String, Int32)	</li>
-        <li>Char.IsSurrogate(Char)</li>
-        <li>Char.IsSurrogate(String, Int32)</li>
-        <li>Char.IsSurrogatePair(Char, Char)</li>
-        <li>Char.IsSurrogatePair(String, Int32)</li>
-        <li>Char.IsSymbol(Char)</li>
-        <li>Char.IsSymbol(String, Int32)</li>
-        <li>Char.IsUpper(Char)</li>
-        <li>Char.IsUpper(String, Int32)</li>
-        <li>Char.IsWhiteSpace(Char)</li>
-        <li>Char.IsWhiteSpace(String, Int32)</li>
-        <li>Char.Parse(String)</li>
-        <li>Char.ToLower(Char, CultureInfo)</li>
-        <li>Char.ToLower(Char)</li>
-        <li>Char.ToLowerInvariant(Char)	</li>
-        <li>String Char.ToString(Char)</li>
-        <li>Char.ToUpper(Char, CultureInfo)</li>
-        <li>Char.ToUpper(Char)</li>
-        <li>Char.ToUpperInvariant(Char)</li>
-        <li>Char.TryParse(String, Char)</li>
+        <li>String Char.ConvertFromUtf32(Int32 utf32)</li>
+        <li>Int32 Char.ConvertToUtf32(Char highSurrogate, Char lowSurrogate)</li>
+        <li>Int32 Char.ConvertToUtf32(String s, Int32 index)</li>
+        <li>Double Char.GetNumericValue(Char c)</li>
+        <li>Double Char.GetNumericValue(String s, Int32 index)</li>
+        <li>UnicodeCategory Char.GetUnicodeCategory(Char c)</li>
+        <li>UnicodeCategory Char.GetUnicodeCategory(String s, Int32 index)</li>
+        <li>Boolean Char.IsAscii(Char c)</li>
+        <li>Boolean Char.IsAsciiDigit(Char c)</li>
+        <li>Boolean Char.IsAsciiHexDigit(Char c)</li>
+        <li>Boolean Char.IsAsciiHexDigitLower(Char c)</li>
+        <li>Boolean Char.IsAsciiHexDigitUpper(Char c)</li>
+        <li>Boolean Char.IsAsciiLetter(Char c)</li>
+        <li>Boolean Char.IsAsciiLetterLower(Char c)</li>
+        <li>Boolean Char.IsAsciiLetterOrDigit(Char c)</li>
+        <li>Boolean Char.IsAsciiLetterUpper(Char c)</li>
+        <li>Boolean Char.IsBetween(Char c, Char minInclusive, Char maxInclusive)</li>
+        <li>Boolean Char.IsControl(Char c)</li>
+        <li>Boolean Char.IsControl(String s, Int32 index)</li>
+        <li>Boolean Char.IsDigit(Char c)</li>
+        <li>Boolean Char.IsDigit(String s, Int32 index)</li>
+        <li>Boolean Char.IsHighSurrogate(Char c)</li>
+        <li>Boolean Char.IsHighSurrogate(String s, Int32 index)</li>
+        <li>Boolean Char.IsLetter(Char c)</li>
+        <li>Boolean Char.IsLetter(String s, Int32 index)</li>
+        <li>Boolean Char.IsLetterOrDigit(Char c)</li>
+        <li>Boolean Char.IsLetterOrDigit(String s, Int32 index)</li>
+        <li>Boolean Char.IsLower(Char c)</li>
+        <li>Boolean Char.IsLower(String s, Int32 index)</li>
+        <li>Boolean Char.IsLowSurrogate(Char c)</li>
+        <li>Boolean Char.IsLowSurrogate(String s, Int32 index)</li>
+        <li>Boolean Char.IsNumber(Char c)</li>
+        <li>Boolean Char.IsNumber(String s, Int32 index)</li>
+        <li>Boolean Char.IsPunctuation(Char c)</li>
+        <li>Boolean Char.IsPunctuation(String s, Int32 index)</li>
+        <li>Boolean Char.IsSeparator(Char c)</li>
+        <li>Boolean Char.IsSeparator(String s, Int32 index)	</li>
+        <li>Boolean Char.IsSurrogate(Char c)</li>
+        <li>Boolean Char.IsSurrogate(String s, Int32 index)</li>
+        <li>Boolean Char.IsSurrogatePair(Char highSurrogate, Char lowSurrogate)</li>
+        <li>Boolean Char.IsSurrogatePair(String s, Int32 index)</li>
+        <li>Boolean Char.IsSymbol(Char c)</li>
+        <li>Boolean Char.IsSymbol(String s, Int32 index)</li>
+        <li>Boolean Char.IsUpper(Char c)</li>
+        <li>Boolean Char.IsUpper(String s, Int32 index)</li>
+        <li>Boolean Char.IsWhiteSpace(Char c)</li>
+        <li>Boolean Char.IsWhiteSpace(String s, Int32 index)</li>
+        <li>Char Char.Parse(String s)</li>
+        <li>Char Char.ToLower(Char c, System.Globalization.CultureInfo culture)</li>
+        <li>Char Char.ToLower(Char c)</li>
+        <li>Char Char.ToLowerInvariant(Char c)	</li>
+        <li>String Char.ToString(Char c)</li>
+        <li>Char Char.ToUpper(Char c, System.Globalization.CultureInfo culture)</li>
+        <li>Char Char.ToUpper(Char c)</li>
+        <li>Char Char.ToUpperInvariant(Char c)</li>
+        <li>Boolean Char.TryParse(String? s, out Char result)</li>
     </ul>
     <li>实例数据</li>
     <li>实例操作</li>
     <ul>
-        <li>Int32 Instance.CompareTo(char value)</li>
-        <li>Int32 Instance.CompareTo(object? value)</li>
-        <li>Boolean Instance.Equals(char obj)</li>
-        <li>Boolean Instance.Equals(object? obj)</li>
+        <li>Int32 Instance.CompareTo(Char value)</li>
+        <li>Int32 Instance.CompareTo(Object? value)</li>
+        <li>Boolean Instance.Equals(Char obj)</li>
+        <li>Boolean Instance.Equals(Object? obj)</li>
         <li>Int32 Instance.GetHashCode()</li>
         <li>TypeCode Instance.GetTypeCode()</li>
         <li>String Instance.ToString()</li>
