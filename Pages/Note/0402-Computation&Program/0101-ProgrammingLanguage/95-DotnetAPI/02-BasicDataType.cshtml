@@ -31,9 +31,6 @@
 <p>上述几种整数类型的核心区别是能够表达的数值范围不同.</p>
 
 
-
-
-
 <li>实例数据: </li>
 
 <h2 id="浮点数类型">浮点数类型</h2>
@@ -55,9 +52,9 @@
     </ul>
     <li>静态操作</li>
     <ul>
-        <li>Boolean Boolean.Parse(ReadOnlySpan<char> value)</li>
+        <li>Boolean Boolean.Parse(ReadOnlySpan&lt;char&gt; value)</li>
         <li>Boolean Boolean.Parse(string value)</li>
-        <li>Boolean Boolean.TryParse(ReadOnlySpan<char> value, out bool result)</li>
+        <li>Boolean Boolean.TryParse(ReadOnlySpan&lt;char&gt; value, out bool result)</li>
         <li>Boolean Boolean.TryParse(string? value, out bool result)</li>
     </ul>
     <li>实例数据</li>
@@ -71,36 +68,34 @@
         <li>TypeCode Instance.GetTypeCode()</li>
         <li>String Instance.ToString()</li>
         <li>String Instance.ToString(IFormatProvider? provider)</li>
-        <li>Boolean Instance.TryFormat(Span<char> destination, out int charsWritten)</li>
+        <li>Boolean Instance.TryFormat(Span&lt;char&gt; destination, out int charsWritten)</li>
     </ul>
 </ul>
 
 <h2 id="字符类型">字符类型</h2>
 
 <p>字符类型就是单一字符, 在Dotnet中指的是UTF-16字符集中的某一个字符.</p>
+<p>在Dotnet中字符类型指的是<code>System.Char</code></p>
 
 <ul>
     <li>静态数据</li>
     <ul>
-        <li>Char.MaxValue</li>
-        <li>Char.MinValue</li>
+        <li>Char Char.MaxValue</li>
+        <li>Char Char.MinValue</li>
     </ul>
     <li>静态操作</li>
     <ul>
-        <li>Char.ConvertFromUtf32()</li>
-        <li>Char.ConvertToUtf32()</li>
-        <li>Char.GetNumericValue()</li>
-        <li>Char.GetUnicodeCategory()</li>
-        <li>Char.IsAscii()</li>
-        <ul>
-            <li>用途: 判断字符是否为Ascii字符</li>
-            <li>输入: </li>
-            <li>输出: </li>
-            <li>笔记: </li>
-        </ul>
-        <li>Char.IsAsciiDigit()</li>
-        <li>Char.IsAsciiHexDigit()</li>
-        <li>Char.IsAsciiHexDigitLower()</li>
+        <li>String Char.ConvertFromUtf32(int utf32)</li>
+        <li>Int32 Char.ConvertToUtf32(char highSurrogate, char lowSurrogate)</li>
+        <li>Int32 Char.ConvertToUtf32(string s, int index)</li>
+        <li>Double Char.GetNumericValue(char c)</li>
+        <li>Double Char.GetNumericValue(string s, int index)</li>
+        <li>UnicodeCategory Char.GetUnicodeCategory(char c)</li>
+        <li>UnicodeCategory Char.GetUnicodeCategory(string s, int index)</li>
+        <li>Boolean Char.IsAscii(char c)</li>
+        <li>Boolean Char.IsAsciiDigit(char c)</li>
+        <li>Boolean Char.IsAsciiHexDigit(char c)</li>
+        <li>Boolean Char.IsAsciiHexDigitLower(char c)</li>
         <li>Char.IsAsciiHexDigitUpper(Char)</li>
         <li>Char.IsAsciiLetter(Char)</li>
         <li>Char.IsAsciiLetterLower(Char)</li>
@@ -141,7 +136,7 @@
         <li>Char.ToLower(Char, CultureInfo)</li>
         <li>Char.ToLower(Char)</li>
         <li>Char.ToLowerInvariant(Char)	</li>
-        <li>Char.ToString(Char)</li>
+        <li>String Char.ToString(Char)</li>
         <li>Char.ToUpper(Char, CultureInfo)</li>
         <li>Char.ToUpper(Char)</li>
         <li>Char.ToUpperInvariant(Char)</li>
@@ -150,12 +145,14 @@
     <li>实例数据</li>
     <li>实例操作</li>
     <ul>
-        <li>Instance.CompareTo()</li>
-        <li>Instance.Equals()</li>
-        <li>Instance.GetHashCode()</li>
-        <li>Instance.GetTypeCode()</li>
-        <li>Instance.ToString()</li>
-        <li>Instance.ToString(IFormatProvider)</li>
+        <li>Int32 Instance.CompareTo(char value)</li>
+        <li>Int32 Instance.CompareTo(object? value)</li>
+        <li>Boolean Instance.Equals(char obj)</li>
+        <li>Boolean Instance.Equals(object? obj)</li>
+        <li>Int32 Instance.GetHashCode()</li>
+        <li>TypeCode Instance.GetTypeCode()</li>
+        <li>String Instance.ToString()</li>
+        <li>String Instance.ToString(IFormatProvider? provider)</li>
     </ul>
 </ul>
 
