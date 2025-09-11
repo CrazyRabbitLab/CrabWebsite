@@ -1,0 +1,161 @@
+@page
+
+<h1>基础数据类型 BasicDataType</h1>
+
+<ul>
+    <li><a href="#整数类型">整数类型</a></li>
+    <li><a href="#浮点数类型">浮点数类型</a></li>
+    <li><a href="#布尔类型">布尔类型</a></li>
+    <li><a href="#字符类型">字符类型</a></li>
+</ul>
+
+<p>基础数据类型指的是计算机编程语言标准库中最为基础的数据类型, 是构成其他数据类型的基础.</p>
+<p>有时各种数据类型共享有相似的数据与操作, 下面使用<code>Type</code>指代多种不同的数据类型.</p>
+<p>需要注意: 在不同的语境中, <code>Type</code>指代的数据类型的种类是不同的.</p>
+<p>再次强调: 在不同的语境中, <code>Type</code>指代的数据类型的种类是不同的.</p>
+
+<h2 id="整数类型">整数类型</h2>
+
+<ul>
+    <li>静态数据: </li>
+    <ul>
+        <li></li>
+    </ul>
+    <li>静态操作: </li>
+    <li>实例数据: </li>
+    <li>实例操作: </li>
+</ul>
+
+<p>整数类型指的就是计算机中的正整数, 0 以及负整数.</p>
+<p>在Dotnet中, 共有以下几种整数类型: <code>System.SByte</code> <code>System.Int16</code> <code>System.Int32</code> <code>System.Int64</code> <code>System.Int128</code> <code>System.Byte</code> <code>System.UInt16</code> <code>System.UInt32</code> <code>System.UInt64</code> <code>System.UInt128</code> </p>
+<p>上述几种整数类型的核心区别是能够表达的数值范围不同.</p>
+
+
+
+
+
+<li>实例数据: </li>
+
+<h2 id="浮点数类型">浮点数类型</h2>
+
+<p>浮点数类型指的就是数学中的带有小数点的小数类型.</p>
+<p>在Dotnet中, 共有以下几种浮点数类型: <code>System.Half</code> <code>System.Single</code> <code>System.Double</code> <code>System.Decimal</code></p>
+<p>其中, <code>System.Half</code> <code>System.Single</code> <code>System.Double</code>是二进制浮点数; <code>System.Decimal</code>是十进制浮点数.</p>
+
+<h2 id="布尔类型">布尔类型</h2>
+
+<p>布尔类型就是真值与假值.</p>
+<p>在Dotnet中, 布尔类型指的是: <code>System.Boolean</code>, 简写为bool.</p>
+
+<ul>
+    <li>静态数据</li>
+    <ul>
+        <li>String Boolean.FalseString</li>
+        <li>String Boolean.TureString</li>
+    </ul>
+    <li>静态操作</li>
+    <ul>
+        <li>Boolean Boolean.Parse(ReadOnlySpan<char> value)</li>
+        <li>Boolean Boolean.Parse(string value)</li>
+        <li>Boolean Boolean.TryParse(ReadOnlySpan<char> value, out bool result)</li>
+        <li>Boolean Boolean.TryParse(string? value, out bool result)</li>
+    </ul>
+    <li>实例数据</li>
+    <li>示例操作</li>
+    <ul>
+        <li>Int32 Instance.CompareTo(Boolean value)</li>
+        <li>Int32 Instance.CompareTo(object? obj)</li>
+        <li>Boolean Instance.Equals(Boolean obj)</li>
+        <li>Boolean Instance.Equals(object? obj)</li>
+        <li>Int32 Instance.GetHashCode()</li>
+        <li>TypeCode Instance.GetTypeCode()</li>
+        <li>String Instance.ToString()</li>
+        <li>String Instance.ToString(IFormatProvider? provider)</li>
+        <li>Boolean Instance.TryFormat(Span<char> destination, out int charsWritten)</li>
+    </ul>
+</ul>
+
+<h2 id="字符类型">字符类型</h2>
+
+<p>字符类型就是单一字符, 在Dotnet中指的是UTF-16字符集中的某一个字符.</p>
+
+<ul>
+    <li>静态数据</li>
+    <ul>
+        <li>Char.MaxValue</li>
+        <li>Char.MinValue</li>
+    </ul>
+    <li>静态操作</li>
+    <ul>
+        <li>Char.ConvertFromUtf32()</li>
+        <li>Char.ConvertToUtf32()</li>
+        <li>Char.GetNumericValue()</li>
+        <li>Char.GetUnicodeCategory()</li>
+        <li>Char.IsAscii()</li>
+        <ul>
+            <li>用途: 判断字符是否为Ascii字符</li>
+            <li>输入: </li>
+            <li>输出: </li>
+            <li>笔记: </li>
+        </ul>
+        <li>Char.IsAsciiDigit()</li>
+        <li>Char.IsAsciiHexDigit()</li>
+        <li>Char.IsAsciiHexDigitLower()</li>
+        <li>Char.IsAsciiHexDigitUpper(Char)</li>
+        <li>Char.IsAsciiLetter(Char)</li>
+        <li>Char.IsAsciiLetterLower(Char)</li>
+        <li>Char.IsAsciiLetterOrDigit(Char)</li>
+        <li>Char.IsAsciiLetterUpper(Char)</li>
+        <li>Char.IsBetween(Char, Char, Char)</li>
+        <li>Char.IsControl(Char)</li>
+        <li>Char.IsControl(String, Int32)</li>
+        <li>Char.IsDigit(Char)</li>
+        <li>Char.IsDigit(String, Int32)</li>
+        <li>Char.IsHighSurrogate(Char)</li>
+        <li>Char.IsHighSurrogate(String, Int32)</li>
+        <li>Char.IsLetter(Char)</li>
+        <li>Char.IsLetter(String, Int32)</li>
+        <li>Char.IsLetterOrDigit(Char)</li>
+        <li>Char.IsLetterOrDigit(String, Int32)</li>
+        <li>Char.IsLower(Char)</li>
+        <li>Char.IsLower(String, Int32)</li>
+        <li>Char.IsLowSurrogate(Char)</li>
+        <li>Char.IsLowSurrogate(String, Int32)</li>
+        <li>Char.IsNumber(Char)</li>
+        <li>Char.IsNumber(String, Int32)</li>
+        <li>Char.IsPunctuation(Char)</li>
+        <li>Char.IsPunctuation(String, Int32)</li>
+        <li>Char.IsSeparator(Char)</li>
+        <li>Char.IsSeparator(String, Int32)	</li>
+        <li>Char.IsSurrogate(Char)</li>
+        <li>Char.IsSurrogate(String, Int32)</li>
+        <li>Char.IsSurrogatePair(Char, Char)</li>
+        <li>Char.IsSurrogatePair(String, Int32)</li>
+        <li>Char.IsSymbol(Char)</li>
+        <li>Char.IsSymbol(String, Int32)</li>
+        <li>Char.IsUpper(Char)</li>
+        <li>Char.IsUpper(String, Int32)</li>
+        <li>Char.IsWhiteSpace(Char)</li>
+        <li>Char.IsWhiteSpace(String, Int32)</li>
+        <li>Char.Parse(String)</li>
+        <li>Char.ToLower(Char, CultureInfo)</li>
+        <li>Char.ToLower(Char)</li>
+        <li>Char.ToLowerInvariant(Char)	</li>
+        <li>Char.ToString(Char)</li>
+        <li>Char.ToUpper(Char, CultureInfo)</li>
+        <li>Char.ToUpper(Char)</li>
+        <li>Char.ToUpperInvariant(Char)</li>
+        <li>Char.TryParse(String, Char)</li>
+    </ul>
+    <li>实例数据</li>
+    <li>实例操作</li>
+    <ul>
+        <li>Instance.CompareTo()</li>
+        <li>Instance.Equals()</li>
+        <li>Instance.GetHashCode()</li>
+        <li>Instance.GetTypeCode()</li>
+        <li>Instance.ToString()</li>
+        <li>Instance.ToString(IFormatProvider)</li>
+    </ul>
+</ul>
+
