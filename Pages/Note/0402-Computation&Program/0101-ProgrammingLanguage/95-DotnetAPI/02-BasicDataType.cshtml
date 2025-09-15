@@ -49,11 +49,11 @@
     <ul>
         <li>String Boolean.FalseString</li>
         <ul>
-            <li>这个字段与字符串"False"等价;</li>
+            <li>介绍: 这个字段与字符串"False"等价;</li>
         </ul>
         <li>String Boolean.TureString</li>
         <ul>
-            <li>这个字段与字符串"True"等价;</li>
+            <li>介绍: 这个字段与字符串"True"等价;</li>
         </ul>
     </ul>
     <li>静态操作</li>
@@ -75,7 +75,7 @@
             </ul>
             <li>输出: </li>
             <ul>
-                <li>输出一个代表这个示例与value之间关系的带符号整数, 其中: </li>
+                <li>输出一个代表这个示例与value之间关系的Int32, 其中: </li>
                 <li>当两者都是<code>True</code>或两者都是<code>False</code>时, 返回值是0</li>
                 <li>当实例是<code>False</code>并且value是<code>True</code>时, 返回值小于0</li>
                 <li>当实例是<code>True</code>并且value是<code>False</code>时, 返回值大于0</li>
@@ -91,7 +91,10 @@
             </ul>
             <li>输出: </li>
             <ul>
-                <li></li>
+                <li>输出一个代表这个实例与obj之间关系的Int32, 其中: </li>
+                <li>当两者都是<code>True</code>或两者都是<code>False</code>时, 返回值是0</li>
+                <li>当实例是<code>False</code>并且obj是<code>True</code>时, 返回值小于0</li>
+                <li>当实例是<code>True</code>并且obj是<code>False</code>时,或者obj是<code>null</code>时, 返回值大于0</li>
             </ul>
             <li>注意: </li>
             <ul>
@@ -99,10 +102,67 @@
             </ul>
         </ul>
         <li>Boolean Instance.Equals(Boolean obj)</li>
+        <ul>
+            <li>介绍: 返回一个布尔值, 这个布尔值代表了这个实例是否和特定的布尔对象相等.</li>
+            <li>输入: </li>
+            <ul>
+                <li>obj: 一个要去和这个实例进行比较的布尔值</li>
+            </ul>
+            <li>输出: </li>
+            <ul>
+                <li>输出一个布尔值, 其中: </li>
+                <li>当输入的obj和这个实例具有相同的值的时候, 返回<code>True</code></li>
+                <li>其他情况下, 返回<code>False</code></li>
+            </ul>
+        </ul>
         <li>Boolean Instance.Equals(Object? obj)</li>
+        <ul>
+            <li>介绍: 返回一个布尔值, 这个布尔值代表了这个实例是否和特定的对象相等.</li>
+            <li>输入: </li>
+            <ul>
+                <li>obj: 一个要去和这个实例进行比较的对象.</li>
+            </ul>
+            <li>输出: </li>
+            <ul>
+                <li>输出一个布尔值, 其中: </li>
+                <li>当输入的obj和这个实例具有相同的值的时候, 返回<code>True</code></li>
+                <li>其他情况下, 返回<code>False</code></li>
+            </ul>
+        </ul>
         <li>Int32 Instance.GetHashCode()</li>
+        <ul>
+            <li>介绍: 返回这个实例的哈希值</li>
+            <li>输入: 无需输入</li>
+            <li>输出: </li>
+            <ul>
+                <li>输出一个代表当前实例的Int32哈希值</li>
+            </ul>
+        </ul>
         <li>TypeCode Instance.GetTypeCode()</li>
+        <ul>
+            <li>介绍: 获取当前实例的类型代码TypeCode</li>
+            <li>输入: 无需输入</li>
+            <li>输出: </li>
+            <ul>
+                <li>返回一个Bollean枚举常量.</li>
+            </ul>
+        </ul>
         <li>String Instance.ToString()</li>
+        <ul>
+            <li>介绍: 将这个实例转换成相等的字符串.</li>
+            <li>输入: 无需输入</li>
+            <li>输出: </li>
+            <ul>
+                <li>输出一个字符串, 这个字符串的值和这个布尔实例的值相等, 也就是: </li>
+                <li>当这个布尔实例的值等于<code>True</code>时, 返回<code>Boolean.TrueString</code> </li>
+                <li>当这个布尔实例的值等于<code>False</code>时, 返回<code>Boolean.FalseString</code> </li>
+            </ul>
+            <li>注意: </li>
+            <ul>
+                <li>这个方法返回的是字符串常量"False"或者字符串常量"True".</li>
+                <li>在xml中, xml是大小写敏感的, 并且默认"false"以及"true"才是有效的, 所以如果需要将值写入到xml中时, 要使用<code>StringInstance.ToLowerInvariant()</code>, 将其转换成小写形式再写入xml文件. </li>
+            </ul>
+        </ul>
         <li>String Instance.ToString(IFormatProvider? provider)</li>
         <li>Boolean Instance.TryFormat(Span&lt;char&gt; destination, out Int32 charsWritten)</li>
     </ul>
