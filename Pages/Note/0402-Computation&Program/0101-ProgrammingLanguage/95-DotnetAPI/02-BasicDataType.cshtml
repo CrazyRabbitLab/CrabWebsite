@@ -34,37 +34,50 @@
 <li>实例数据: </li>
 
 <h2 id="浮点数类型">浮点数类型</h2>
-
 <p>浮点数类型指的就是数学中的带有小数点的小数类型.</p>
 <p>在Dotnet中, 共有以下几种浮点数类型: <code>System.Half</code> <code>System.Single</code> <code>System.Double</code> <code>System.Decimal</code></p>
 <p>其中, <code>System.Half</code> <code>System.Single</code> <code>System.Double</code>是二进制浮点数; <code>System.Decimal</code>是十进制浮点数.</p>
 
 <h2 id="布尔类型">布尔类型</h2>
-
 <p>布尔类型就是真值与假值.</p>
 <p>在Dotnet中, 布尔类型指的是: <code>System.Boolean</code>, 简写为bool.</p>
 
+<h3>简单介绍</h3>
+
+<p>静态数据</p>
 <ul>
-    <li>静态数据</li>
-    <ul>
-        <li>String Boolean.FalseString</li>
-        <ul>
-            <li>介绍: 这个字段与字符串"False"等价;</li>
-        </ul>
-        <li>String Boolean.TureString</li>
-        <ul>
-            <li>介绍: 这个字段与字符串"True"等价;</li>
-        </ul>
-    </ul>
-    <li>静态操作</li>
-    <ul>
-        <li>Boolean Boolean.Parse(ReadOnlySpan&lt;char&gt; value)</li>
-        <li>Boolean Boolean.Parse(string value)</li>
-        <li>Boolean Boolean.TryParse(ReadOnlySpan&lt;char&gt; value, out bool result)</li>
-        <li>Boolean Boolean.TryParse(string? value, out bool result)</li>
-    </ul>
+    <li>String Boolean.FalseStringbr <br> <small>和字符串"False"等价</small></li>
+    <li>String Boolean.TureStringbr <br> <small>和字符串"True"等价</small></li>
+</ul>
+
+<p>静态操作</p>
+<ul>
+    <li>Boolean Boolean.Parse(String value) <br> <small>将传入的字符串value转换成布尔类型输出</small></li>
+    <li>Boolean Boolean.TryParse(String value) <br><small>将传入的字符串value转换成布尔类型输出</small></li>
+</ul>
+<p>Boolean.Parse()与Boolean.TryParse()的本质区别是异常处理不同: </p>
+<p>相同之处: 当传入的字符串value与"True"相等时, 输出Ture; 当传入的字符串value与"False"相等时, 传出False.</p>
+<p>不同之处: 当传入的字符串value是Null时, Boolean.Parse()会输出异常ArgumentNullException; 而Boolean.TryParse()会输出False.</p>
+<p>当传入的字符串value既不是"True" "False"又不是Null时, Boolean.Parse()会抛出异常FormatException; 而Boolean.TryParse()会输出False.</p>
+<p>需要注意的是, 上述的Boolean.Parse()与Boolean.TryBoolean()均是大小写敏感的.</p>
+
+<p>实例数据</p>
+<ul>
+    <li>无实例数据</li>
+</ul>
+
+<p>实例操作</p>
+<ul>
+    <li>Int32 Instance.CompareTo(Boolean value) <br><small>当这个实例本身与传入的布尔类型参数value相等时, 返回值是Int32类型的0; 当这个实例本身是False而传入的布尔类型参数value是True时, 返回值是</small> </li>
+    <li>Boolean Instance.Equals(Boolean obj)</li>
+    <li>Int32 Instance.GetHashCode()</li>
+    <li>TypeCode Instance.GetTypeCode()</li>
+    <li>String Instance.ToString()</li>
+</ul>
+<p></p>
+
     <li>实例数据</li>
-    <li>示例操作</li>
+    <li>实例操作</li>
     <ul>
         <li>Int32 Instance.CompareTo(Boolean value)</li>
         <ul>
