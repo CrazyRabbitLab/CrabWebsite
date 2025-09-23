@@ -1,0 +1,90 @@
+@page
+
+<h1>基础数据类型-字符类型 BasicDataType-Char</h1>
+
+@* ------------------------------------------------------------------------ *@
+
+
+<h2 id="字符类型">字符类型</h2>
+
+<p>字符类型就是单一字符, 在Dotnet中指的是UTF-16字符集中的某一个字符.</p>
+<p>在Dotnet中字符类型指的是<code>System.Char</code></p>
+
+<ul>
+    <li>静态数据</li>
+    <ul>
+        <li>Char Char.MaxValue</li>
+        <li>Char Char.MinValue</li>
+    </ul>
+    <li>静态操作</li>
+    <ul>
+        <li>String Char.ConvertFromUtf32(Int32 utf32)</li>
+        <li>Int32 Char.ConvertToUtf32(Char highSurrogate, Char lowSurrogate)</li>
+        <li>Int32 Char.ConvertToUtf32(String s, Int32 index)</li>
+        <li>Double Char.GetNumericValue(Char c)</li>
+        <li>Double Char.GetNumericValue(String s, Int32 index)</li>
+        <li>UnicodeCategory Char.GetUnicodeCategory(Char c)</li>
+        <li>UnicodeCategory Char.GetUnicodeCategory(String s, Int32 index)</li>
+        <li>Boolean Char.IsAscii(Char c)</li>
+        <li>Boolean Char.IsAsciiDigit(Char c)</li>
+        <li>Boolean Char.IsAsciiHexDigit(Char c)</li>
+        <li>Boolean Char.IsAsciiHexDigitLower(Char c)</li>
+        <li>Boolean Char.IsAsciiHexDigitUpper(Char c)</li>
+        <li>Boolean Char.IsAsciiLetter(Char c)</li>
+        <li>Boolean Char.IsAsciiLetterLower(Char c)</li>
+        <li>Boolean Char.IsAsciiLetterOrDigit(Char c)</li>
+        <li>Boolean Char.IsAsciiLetterUpper(Char c)</li>
+        <li>Boolean Char.IsBetween(Char c, Char minInclusive, Char maxInclusive)</li>
+        <li>Boolean Char.IsControl(Char c)</li>
+        <li>Boolean Char.IsControl(String s, Int32 index)</li>
+        <li>Boolean Char.IsDigit(Char c)</li>
+        <li>Boolean Char.IsDigit(String s, Int32 index)</li>
+        <li>Boolean Char.IsHighSurrogate(Char c)</li>
+        <li>Boolean Char.IsHighSurrogate(String s, Int32 index)</li>
+        <li>Boolean Char.IsLetter(Char c)</li>
+        <li>Boolean Char.IsLetter(String s, Int32 index)</li>
+        <li>Boolean Char.IsLetterOrDigit(Char c)</li>
+        <li>Boolean Char.IsLetterOrDigit(String s, Int32 index)</li>
+        <li>Boolean Char.IsLower(Char c)</li>
+        <li>Boolean Char.IsLower(String s, Int32 index)</li>
+        <li>Boolean Char.IsLowSurrogate(Char c)</li>
+        <li>Boolean Char.IsLowSurrogate(String s, Int32 index)</li>
+        <li>Boolean Char.IsNumber(Char c)</li>
+        <li>Boolean Char.IsNumber(String s, Int32 index)</li>
+        <li>Boolean Char.IsPunctuation(Char c)</li>
+        <li>Boolean Char.IsPunctuation(String s, Int32 index)</li>
+        <li>Boolean Char.IsSeparator(Char c)</li>
+        <li>Boolean Char.IsSeparator(String s, Int32 index)	</li>
+        <li>Boolean Char.IsSurrogate(Char c)</li>
+        <li>Boolean Char.IsSurrogate(String s, Int32 index)</li>
+        <li>Boolean Char.IsSurrogatePair(Char highSurrogate, Char lowSurrogate)</li>
+        <li>Boolean Char.IsSurrogatePair(String s, Int32 index)</li>
+        <li>Boolean Char.IsSymbol(Char c)</li>
+        <li>Boolean Char.IsSymbol(String s, Int32 index)</li>
+        <li>Boolean Char.IsUpper(Char c)</li>
+        <li>Boolean Char.IsUpper(String s, Int32 index)</li>
+        <li>Boolean Char.IsWhiteSpace(Char c)</li>
+        <li>Boolean Char.IsWhiteSpace(String s, Int32 index)</li>
+        <li>Char Char.Parse(String s)</li>
+        <li>Char Char.ToLower(Char c, System.Globalization.CultureInfo culture)</li>
+        <li>Char Char.ToLower(Char c)</li>
+        <li>Char Char.ToLowerInvariant(Char c)</li>
+        <li>String Char.ToString(Char c)</li>
+        <li>Char Char.ToUpper(Char c, System.Globalization.CultureInfo culture)</li>
+        <li>Char Char.ToUpper(Char c)</li>
+        <li>Char Char.ToUpperInvariant(Char c)</li>
+        <li>Boolean Char.TryParse(String? s, out Char result)</li>
+    </ul>
+    <li>实例数据</li>
+    <li>实例操作</li>
+    <ul>
+        <li>Int32 CharInstance.CompareTo(Char value)</li>
+        <li>Int32 CharInstance.CompareTo(Object? value)</li>
+        <li>Boolean CharInstance.Equals(Char obj)</li>
+        <li>Boolean CharInstance.Equals(Object? obj)</li>
+        <li>Int32 CharInstance.GetHashCode()</li>
+        <li>TypeCode CharInstance.GetTypeCode()</li>
+        <li>String CharInstance.ToString()</li>
+        <li>String CharInstance.ToString(IFormatProvider? provider)</li>
+    </ul>
+</ul>

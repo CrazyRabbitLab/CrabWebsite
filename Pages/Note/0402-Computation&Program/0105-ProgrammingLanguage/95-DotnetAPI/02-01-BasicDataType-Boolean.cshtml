@@ -1,0 +1,178 @@
+@page
+
+<h1>基础数据类型-布尔类型 BasicDataType-Boolean</h1>
+
+@* ------------------------------------------------------------------------ *@
+
+<h2 id="布尔类型">布尔类型</h2>
+<p>布尔类型就是真值与假值.</p>
+<p>在Dotnet中, 布尔类型指的是: <code>System.Boolean</code>, 简写为bool.</p>
+<p>System.Boolean的类型(Type)是结构体(struct).</p>
+
+<p>静态数据</p>
+<ul>
+    <li>String Boolean.FalseStringbr</li>
+    <li>String Boolean.TureStringbr</li>
+</ul>
+<p>静态操作</p>
+<ul>
+    <li>Boolean Boolean.Parse(String value)</li>
+    <li>Boolean Boolean.Parse(ReadOnlySpan&lt;char&gt; value)</li>
+    <li>Boolean Boolean.TryParse(String? value, out Boolean result)</li>
+    <li>Boolean Boolean.TryParse(ReadOnlySpan&lt;char&gt; value, out Boolean result)</li>
+</ul>
+<p>实例数据</p>
+<p>实例操作</p>
+<ul>
+    <li>Int32 BooleanInstance.CompareTo(Boolean value)</li>
+    <li>Int32 BooleanInstance.CompareTo(Object? obj)</li>
+    <li>Boolean BooleanInstance.Equals(Boolean obj)</li>
+    <li>Boolean BooleanInstance.Equals(Object? obj)</li>
+    <li>Int32 BooleanInstance.GetHashCode()</li>
+    <li>TypeCode BooleanInstance.GetTypeCode()</li>
+    <li>String BooleanInstance.ToString()</li>
+    <li>String BooleanInstance.ToString(IFormatProvider? provider)</li>
+    <li>Boolean BooleanInstance.TryFormat(Span&lt;char&gt; destination, out Int32 charsWritten)</li>
+</ul>
+
+@* ------------------------------------------------------------------------ *@
+
+
+
+<h3>详细说明</h3>
+<p>静态数据</p>
+<ul>
+    <li>String Boolean.FalseStringbr <br> <small>和字符串"False"等价</small></li>
+    <li>String Boolean.TureStringbr <br> <small>和字符串"True"等价</small></li>
+</ul>
+
+<p>静态操作</p>
+<ul>
+    <li>Boolean Boolean.Parse(String value) <br> <small>将传入的字符串value转换成布尔类型输出</small></li>
+    <li>Boolean Boolean.TryParse(String value) <br><small>将传入的字符串value转换成布尔类型输出</small></li>
+</ul>
+<p>Boolean.Parse()与Boolean.TryParse()的本质区别是异常处理不同: </p>
+<p>相同之处: 当传入的字符串value与"True"相等时, 输出Ture; 当传入的字符串value与"False"相等时, 传出False.</p>
+<p>不同之处: 当传入的字符串value是Null时, Boolean.Parse()会输出异常ArgumentNullException; 而Boolean.TryParse()会输出False.</p>
+<p>当传入的字符串value既不是"True" "False"又不是Null时, Boolean.Parse()会抛出异常FormatException; 而Boolean.TryParse()会输出False.</p>
+<p>需要注意的是, 上述的Boolean.Parse()与Boolean.TryBoolean()均是大小写敏感的.</p>
+
+<p>实例数据</p>
+<ul>
+    <li>无实例数据</li>
+</ul>
+
+<p>实例操作</p>
+<ul>
+    <li>Int32 Instance.CompareTo(Boolean value) <br><small>当这个实例本身与传入的布尔类型参数value相等时, 返回值是Int32类型的0; 当这个实例本身是False而传入的布尔类型参数value是True时, 返回值是</small> </li>
+    <li>Boolean Instance.Equals(Boolean obj)</li>
+    <li>Int32 Instance.GetHashCode()</li>
+    <li>TypeCode Instance.GetTypeCode()</li>
+    <li>String Instance.ToString()</li>
+</ul>
+<p></p>
+
+    <li>实例数据</li>
+    <li>实例操作</li>
+    <ul>
+        <li>Int32 Instance.CompareTo(Boolean value)</li>
+        <ul>
+            <li>介绍: 将这个实例本身与特定的布尔对象进行比较, 然后返回一个表明它们之间关系的整数.</li>
+            <li>输入: </li>
+            <ul>
+                <li>value: 一个将用来与这个实例进行比较的布尔对象.</li>
+            </ul>
+            <li>输出: </li>
+            <ul>
+                <li>输出一个代表这个示例与value之间关系的Int32, 其中: </li>
+                <li>当两者都是<code>True</code>或两者都是<code>False</code>时, 返回值是0</li>
+                <li>当实例是<code>False</code>并且value是<code>True</code>时, 返回值小于0</li>
+                <li>当实例是<code>True</code>并且value是<code>False</code>时, 返回值大于0</li>
+            </ul>
+
+        </ul>
+        <li>Int32 Instance.CompareTo(Object? obj)</li>
+        <ul>
+            <li>介绍: 将这个实例与特定的对象进行比较, 然后返回一个表明它们之间关系的整数.</li>
+            <li>输入: </li>
+            <ul>
+                <li>obj: 一个将用来与这个实例进行比较的对象, 或者是<code>null</code></li>
+            </ul>
+            <li>输出: </li>
+            <ul>
+                <li>输出一个代表这个实例与obj之间关系的Int32, 其中: </li>
+                <li>当两者都是<code>True</code>或两者都是<code>False</code>时, 返回值是0</li>
+                <li>当实例是<code>False</code>并且obj是<code>True</code>时, 返回值小于0</li>
+                <li>当实例是<code>True</code>并且obj是<code>False</code>时,或者obj是<code>null</code>时, 返回值大于0</li>
+            </ul>
+            <li>注意: </li>
+            <ul>
+                <li>obj必须是<code>null</code>或者Boolean的一个实例, 其他情况下会抛出异常ArgumentException</li>
+            </ul>
+        </ul>
+        <li>Boolean Instance.Equals(Boolean obj)</li>
+        <ul>
+            <li>介绍: 返回一个布尔值, 这个布尔值代表了这个实例是否和特定的布尔对象相等.</li>
+            <li>输入: </li>
+            <ul>
+                <li>obj: 一个要去和这个实例进行比较的布尔值</li>
+            </ul>
+            <li>输出: </li>
+            <ul>
+                <li>输出一个布尔值, 其中: </li>
+                <li>当输入的obj和这个实例具有相同的值的时候, 返回<code>True</code></li>
+                <li>其他情况下, 返回<code>False</code></li>
+            </ul>
+        </ul>
+        <li>Boolean Instance.Equals(Object? obj)</li>
+        <ul>
+            <li>介绍: 返回一个布尔值, 这个布尔值代表了这个实例是否和特定的对象相等.</li>
+            <li>输入: </li>
+            <ul>
+                <li>obj: 一个要去和这个实例进行比较的对象.</li>
+            </ul>
+            <li>输出: </li>
+            <ul>
+                <li>输出一个布尔值, 其中: </li>
+                <li>当输入的obj和这个实例具有相同的值的时候, 返回<code>True</code></li>
+                <li>其他情况下, 返回<code>False</code></li>
+            </ul>
+        </ul>
+        <li>Int32 Instance.GetHashCode()</li>
+        <ul>
+            <li>介绍: 返回这个实例的哈希值</li>
+            <li>输入: 无需输入</li>
+            <li>输出: </li>
+            <ul>
+                <li>输出一个代表当前实例的Int32哈希值</li>
+            </ul>
+        </ul>
+        <li>TypeCode Instance.GetTypeCode()</li>
+        <ul>
+            <li>介绍: 获取当前实例的类型代码TypeCode</li>
+            <li>输入: 无需输入</li>
+            <li>输出: </li>
+            <ul>
+                <li>返回一个Bollean枚举常量.</li>
+            </ul>
+        </ul>
+        <li>String Instance.ToString()</li>
+        <ul>
+            <li>介绍: 将这个实例转换成相等的字符串.</li>
+            <li>输入: 无需输入</li>
+            <li>输出: </li>
+            <ul>
+                <li>输出一个字符串, 这个字符串的值和这个布尔实例的值相等, 也就是: </li>
+                <li>当这个布尔实例的值等于<code>True</code>时, 返回<code>Boolean.TrueString</code> </li>
+                <li>当这个布尔实例的值等于<code>False</code>时, 返回<code>Boolean.FalseString</code> </li>
+            </ul>
+            <li>注意: </li>
+            <ul>
+                <li>这个方法返回的是字符串常量"False"或者字符串常量"True".</li>
+                <li>在xml中, xml是大小写敏感的, 并且默认"false"以及"true"才是有效的, 所以如果需要将值写入到xml中时, 要使用<code>StringInstance.ToLowerInvariant()</code>, 将其转换成小写形式再写入xml文件. </li>
+            </ul>
+        </ul>
+        <li>String Instance.ToString(IFormatProvider? provider)</li>
+        <li>Boolean Instance.TryFormat(Span&lt;char&gt; destination, out Int32 charsWritten)</li>
+    </ul>
+</ul>
